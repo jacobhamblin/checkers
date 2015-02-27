@@ -34,7 +34,7 @@ class Piece
   end
 
   def moves(board)
-    slider_moves(board) + jump_moved(board)
+    slide_moves(board) + jump_moves(board)
   end
 
   def slide_moves(board)

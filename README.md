@@ -1,6 +1,7 @@
 # checkers
 
 ###local play
+![single play preview](./checkers.png)
 
 - select movements via wasd and space or return
 
