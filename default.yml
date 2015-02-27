@@ -1,0 +1,342 @@
+--- !ruby/object:Board
+rows:
+- - 
+  - !ruby/object:Piece
+    color: :black
+    pos:
+    - 0
+    - 1
+    symbol: :●
+    king: false
+  - 
+  - !ruby/object:Piece
+    color: :black
+    pos:
+    - 0
+    - 3
+    symbol: :●
+    king: false
+  - 
+  - !ruby/object:Piece
+    color: :black
+    pos:
+    - 0
+    - 5
+    symbol: :●
+    king: false
+  - 
+  - !ruby/object:Piece
+    color: :black
+    pos:
+    - 0
+    - 7
+    symbol: :●
+    king: false
+  - 
+  - !ruby/object:Piece
+    color: :black
+    pos:
+    - 0
+    - 9
+    symbol: :●
+    king: false
+- - !ruby/object:Piece
+    color: :black
+    pos:
+    - 1
+    - 0
+    symbol: :●
+    king: false
+  - 
+  - !ruby/object:Piece
+    color: :black
+    pos:
+    - 1
+    - 2
+    symbol: :●
+    king: false
+  - 
+  - !ruby/object:Piece
+    color: :black
+    pos:
+    - 1
+    - 4
+    symbol: :●
+    king: false
+  - 
+  - !ruby/object:Piece
+    color: :black
+    pos:
+    - 1
+    - 6
+    symbol: :●
+    king: false
+  - 
+  - !ruby/object:Piece
+    color: :black
+    pos:
+    - 1
+    - 8
+    symbol: :●
+    king: false
+  - 
+- - 
+  - !ruby/object:Piece
+    color: :black
+    pos:
+    - 2
+    - 1
+    symbol: :●
+    king: false
+  - 
+  - !ruby/object:Piece
+    color: :black
+    pos:
+    - 2
+    - 3
+    symbol: :●
+    king: false
+  - 
+  - !ruby/object:Piece
+    color: :black
+    pos:
+    - 2
+    - 5
+    symbol: :●
+    king: false
+  - 
+  - !ruby/object:Piece
+    color: :black
+    pos:
+    - 2
+    - 7
+    symbol: :●
+    king: false
+  - 
+  - !ruby/object:Piece
+    color: :black
+    pos:
+    - 2
+    - 9
+    symbol: :●
+    king: false
+- - !ruby/object:Piece
+    color: :black
+    pos:
+    - 3
+    - 0
+    symbol: :●
+    king: false
+  - 
+  - 
+  - 
+  - !ruby/object:Piece
+    color: :black
+    pos:
+    - 3
+    - 4
+    symbol: :●
+    king: false
+  - 
+  - !ruby/object:Piece
+    color: :black
+    pos:
+    - 3
+    - 6
+    symbol: :●
+    king: false
+  - 
+  - !ruby/object:Piece
+    color: :black
+    pos:
+    - 3
+    - 8
+    symbol: :●
+    king: false
+  - 
+- - 
+  - 
+  - 
+  - !ruby/object:Piece
+    color: :black
+    pos:
+    - 4
+    - 3
+    symbol: :●
+    king: false
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+- - 
+  - 
+  - 
+  - 
+  - !ruby/object:Piece
+    color: :white
+    pos:
+    - 5
+    - 4
+    symbol: :○
+    king: false
+  - 
+  - 
+  - 
+  - 
+  - 
+- - 
+  - !ruby/object:Piece
+    color: :white
+    pos:
+    - 6
+    - 1
+    symbol: :○
+    king: false
+  - 
+  - 
+  - 
+  - !ruby/object:Piece
+    color: :white
+    pos:
+    - 6
+    - 5
+    symbol: :○
+    king: false
+  - 
+  - !ruby/object:Piece
+    color: :white
+    pos:
+    - 6
+    - 7
+    symbol: :○
+    king: false
+  - 
+  - !ruby/object:Piece
+    color: :white
+    pos:
+    - 6
+    - 9
+    symbol: :○
+    king: false
+- - !ruby/object:Piece
+    color: :white
+    pos:
+    - 7
+    - 0
+    symbol: :○
+    king: false
+  - 
+  - !ruby/object:Piece
+    color: :white
+    pos:
+    - 7
+    - 2
+    symbol: :○
+    king: false
+  - 
+  - !ruby/object:Piece
+    color: :white
+    pos:
+    - 7
+    - 4
+    symbol: :○
+    king: false
+  - 
+  - !ruby/object:Piece
+    color: :white
+    pos:
+    - 7
+    - 6
+    symbol: :○
+    king: false
+  - 
+  - !ruby/object:Piece
+    color: :white
+    pos:
+    - 7
+    - 8
+    symbol: :○
+    king: false
+  - 
+- - 
+  - !ruby/object:Piece
+    color: :white
+    pos:
+    - 8
+    - 1
+    symbol: :○
+    king: false
+  - 
+  - !ruby/object:Piece
+    color: :white
+    pos:
+    - 8
+    - 3
+    symbol: :○
+    king: false
+  - 
+  - !ruby/object:Piece
+    color: :white
+    pos:
+    - 8
+    - 5
+    symbol: :○
+    king: false
+  - 
+  - !ruby/object:Piece
+    color: :white
+    pos:
+    - 8
+    - 7
+    symbol: :○
+    king: false
+  - 
+  - !ruby/object:Piece
+    color: :white
+    pos:
+    - 8
+    - 9
+    symbol: :○
+    king: false
+- - !ruby/object:Piece
+    color: :white
+    pos:
+    - 9
+    - 0
+    symbol: :○
+    king: false
+  - 
+  - !ruby/object:Piece
+    color: :white
+    pos:
+    - 9
+    - 2
+    symbol: :○
+    king: false
+  - 
+  - !ruby/object:Piece
+    color: :white
+    pos:
+    - 9
+    - 4
+    symbol: :○
+    king: false
+  - 
+  - !ruby/object:Piece
+    color: :white
+    pos:
+    - 9
+    - 6
+    symbol: :○
+    king: false
+  - 
+  - !ruby/object:Piece
+    color: :white
+    pos:
+    - 9
+    - 8
+    symbol: :○
+    king: false
+  - 

@@ -3,7 +3,8 @@ require 'yaml'
 # require 'byebug'
 
 class Game
-  attr_reader :board, :white, :black, :round
+  attr_accessor :board
+  attr_reader :white, :black, :round
 
   def initialize(white = HumanPlayer.new(:white), black = HumanPlayer.new(:black))
     @board = Board.new
@@ -120,6 +121,7 @@ class HumanPlayer < Player
         game.save
       when "\u000C" # ctrl+l
         game.load
+        return
       when "\u0003" #ctrl+c
         exit
       else
