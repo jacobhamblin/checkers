@@ -1,6 +1,7 @@
 class Piece
   DOWN = [[1,1],[1,-1]]
   UP = [[-1,-1],[-1,1]]
+  UP_DOWN = UP + DOWN
 
   attr_reader :symbol, :color
   attr_accessor :pos
@@ -17,9 +18,9 @@ class Piece
     self.pos = pos
     board[pos] = self
     board[old_pos] = nil
-  rescue NoMethodError => e
-    puts "Select a Piece!"
-    retry
+  # rescue NoMethodError => e
+  #   puts "Select a Piece!"
+  #   retry
   end
 
 
@@ -38,10 +39,23 @@ class Piece
   end
 
   def moves(board)
+    slider_moves(board) + jump_moved(board)
+  end
+
+  def slide_moves(board)
     arr = []
     board.rows.each_with_index do |row, ri|
       row.each_with_index do |space, ci|
         arr << [ri, ci] if self.valid_slide?(board, [ri, ci])
+      end
+    end
+    arr
+  end
+
+  def jump_moves(board)
+    arr = []
+    board.rows.each_with_index do |row, ri|
+      row.each_with_index do |space, ci|
         arr << [ri, ci] if self.valid_jump?(board, [ri, ci])
       end
     end

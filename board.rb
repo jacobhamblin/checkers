@@ -1,5 +1,5 @@
 require 'colorize'
-require_relative 'piece.rb'
+require_relative './piece.rb'
 
 class Board
   attr_reader :rows
@@ -7,6 +7,11 @@ class Board
   def initialize
     @rows = Array.new(10) {Array.new(10)}
     populate_board
+  end
+
+  def display(highlight_from = nil, highlight_to = nil)
+    puts "\ec"
+    puts render(highlight_from, highlight_to)
   end
 
   def [](pos)
@@ -35,6 +40,14 @@ class Board
 
   def enemy_piece?(pos, color)
     !self[pos].nil? && self[pos].color != color
+  end
+
+  def gameover?
+    @rows.flatten.compact.none? {|piece| piece.color != @rows.flatten.compact[0].color}
+  end
+
+  def winner
+    @rows.flatten.compact[0].color
   end
 
   def populate_board
