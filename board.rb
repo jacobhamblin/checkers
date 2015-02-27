@@ -68,7 +68,7 @@ class Board
     accumulator_string = ""
     @rows.each_with_index do |row, ri|
       row.each_with_index do |cell, ci|
-        unless [ci, ri] == highlight_from || [ci, ri] == highlight_to
+        unless [ri, ci] == highlight_from || [ri, ci] == highlight_to
           if self[[ri,ci]].nil?
             accumulator_string += color_background("  ", ri, ci)
           else

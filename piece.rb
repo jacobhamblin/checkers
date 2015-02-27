@@ -3,13 +3,14 @@ class Piece
   UP = [[-1,-1],[-1,1]]
   UP_DOWN = UP + DOWN
 
-  attr_reader :symbol, :color
-  attr_accessor :pos
+  attr_reader :color
+  attr_accessor :pos, :king, :symbol
 
   def initialize(color, pos)
     @color = color
     @pos = pos
     @symbol = (color == :white) ? :○ : :●
+    @king = false
   end
 
   def perform_slide(board, pos)
@@ -18,9 +19,7 @@ class Piece
     self.pos = pos
     board[pos] = self
     board[old_pos] = nil
-  # rescue NoMethodError => e
-  #   puts "Select a Piece!"
-  #   retry
+    maybe_promote
   end
 
 
@@ -31,11 +30,7 @@ class Piece
     board[pos] = self
     board[[(old_pos[0] + ((self.pos[0] - old_pos[0]) / 2)), (old_pos[1] + ((self.pos[1] - old_pos[1]) / 2))]] = nil
     board[old_pos] = nil
-  # rescue NoMethodError => e
-  #   puts "Select a Piece!"
-  #   retry
-
-  # Doesn't yet delete the obstacle!
+    maybe_promote
   end
 
   def moves(board)
@@ -82,11 +77,14 @@ class Piece
   end
 
   def move_diffs
-    @color == :white ? UP : DOWN
+    @king ? UP_DOWN : (@color == :white ? UP : DOWN)
   end
 
   def maybe_promote
-
+    if pos[0] == 9 && color == :black || pos[0] == 0 && color == :white
+      @king = true
+      color == :white ? (@symbol = :♔ ) : (@symbol = :♚)
+    end
   end
 
 end

@@ -103,14 +103,16 @@ class HumanPlayer < Player
         from_coordinates == nil ? (from_coordinates = @selection) : (to_coordinates = @selection)
         coords = [@selection, from_coordinates]
         unless to_coordinates.nil?
-          if board[from_coordinates.reverse].valid_slide?(board, to_coordinates.reverse)
-            my_piece?(board, from_coordinates.reverse)
-            board[from_coordinates.reverse].perform_slide(board, to_coordinates.reverse)
+          if board[from_coordinates].valid_slide?(board, to_coordinates)
+            my_piece?(board, from_coordinates)
+            board[from_coordinates].perform_slide(board, to_coordinates)
             return
-          elsif board[from_coordinates.reverse].valid_jump?(board, to_coordinates.reverse)
-            my_piece?(board, from_coordinates.reverse)
-            board[from_coordinates.reverse].perform_jump(board, to_coordinates.reverse)
-            break if board[to_coordinates.reverse].jump_moves > 0
+          elsif board[from_coordinates].valid_jump?(board, to_coordinates)
+            my_piece?(board, from_coordinates)
+            board[from_coordinates].perform_jump(board, to_coordinates)
+            if board[to_coordinates].jump_moves(board).size > 0
+              playturn(board, game)
+            end
             return
           end
         end
@@ -126,6 +128,8 @@ class HumanPlayer < Player
     end
   rescue ArgumentError => e
     retry
+  rescue NoMethodError => e
+    retry
   end
 
   def get_char
@@ -139,10 +143,10 @@ class HumanPlayer < Player
 
   def move_selection(board, stroke)
     offsets = {
-      w: [0,-1],
-      a: [-1,0],
-      s: [0, 1],
-      d: [1,0]
+      w: [-1,0],
+      a: [0,-1],
+      s: [1, 0],
+      d: [0,1]
     }
     stroke = stroke.to_sym
     x, y = @selection
