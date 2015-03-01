@@ -1,3 +1,5 @@
+#TODO: test king
+
 require_relative './board.rb'
 require 'yaml'
 # require 'byebug'
