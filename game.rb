@@ -1,8 +1,7 @@
-#TODO: test king
+#TODO: debug black king
 
 require_relative './board.rb'
 require 'yaml'
-# require 'byebug'
 
 class Game
   attr_accessor :board
